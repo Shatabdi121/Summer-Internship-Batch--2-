@@ -1,0 +1,27 @@
+{
+  "name": "batch-2",
+  "version": "1.0.0",
+  "description": "Hello My First React App",
+  "homepage": "https://github.com/Shatabdi121/Summer-Internship-Batch--2-#readme",
+  "bugs": {
+    "url": "https://github.com/Shatabdi121/Summer-Internship-Batch--2-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shatabdi121/Summer-Internship-Batch--2-.git"
+  },
+  "license": "ISC",
+  "author": "Batch-2",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^18.2.6"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}

@@ -1,2 +1,2 @@
-### What is API?
-pending,fulfilled,rejected
+##caret ( ^ )
+##tilde ( ~ )
