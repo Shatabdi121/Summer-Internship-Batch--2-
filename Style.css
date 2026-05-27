@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    height: 100px;
+    width: 100vw;
+    justify-content: space-around;
+}
+.logo{
+    margin-left: -100px;
+    height: 150px;
+    margin-top: -50px;
+}
+.location{
+    position: relative;
+    left: -180px;
+}
+.text{
+    height: 20px;
+    width: 200px;
+    border-radius: 25px;
+}
+.nav-bar{
+    width: 45vw;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.res-card{
+    border: 2px solid rgb(69, 64, 64);
+    width: 220px;
+    text-align: center;
+}
+.res-image{
+    height: 150px;
+    width: 200px;
+    border-radius: 25px;
+}
+.container{
+    display: flex;
+    gap: 30px;
+}

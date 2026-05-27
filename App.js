@@ -1,6 +1,21 @@
 import React from "react"
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client" //Default Import
+import Header from "./src/components/Header"  //Named Import
+import ResCard from "./src/components/ResCard"
+import Footer from "./src/components/Footer"
+import Body from "./src/components/Body"
 
-const h1=React.createElement("h1",{className:"hello",id:"cfyi"},"Hello React")
+const Main = () =>{
+    return(
+        <div className="main">
+        <Header/>
+        <Body/>
+        <Footer/>
+        </div>
+    )
+}
+
+
+
 const root=ReactDOM.createRoot(document.getElementById("root"))
-root.render(h1)
+root.render(<Main/>)
