@@ -4,6 +4,7 @@ import Header from "./src/components/Header"  //Named Import
 import ResCard from "./src/components/ResCard"
 import Footer from "./src/components/Footer"
 import Body from "./src/components/Body"
+import Example from "./src/components/Example"
 
 const Main = () =>{
     return(

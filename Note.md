@@ -22,3 +22,7 @@
 
 
 ###PROPS:- properties
+
+Code - > Object ->Render
+
+Code -> Render -> Object ->Re render

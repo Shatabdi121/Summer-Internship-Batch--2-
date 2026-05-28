@@ -1,18 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ResCard from './ResCard'
-import { resData } from '../utils/mockData'
+import { SWIGGY_RES_API } from '../utils/constants'
 
 const Body = () => {
+    // const copyOfResData=resData
+    const [resData,setResData]=useState([]);
     const copyOfResData=resData
+
+    async function fetchRestaurent(){
+        const data=await fetch(SWIGGY_RES_API)
+        const resDataFromAPI=await data.json()
+        console.log(resDataFromAPI);
+        
+        setResData(resDataFromAPI.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+        console.log(resData)
+    }
+    
+    useEffect(()=>{
+      fetchRestaurent()
+    },[])
+
+    function topRes(){
+     const a= copyOfResData.filter((res)=>{
+        return res.info.avgRating>4.5
+     })
+     setResData(a)
+    }
+
   return (
+    <div >
+    <button onClick={topRes}>Top Rated </button>
     <div className='container'>
-      {
-        copyOfResData.map((res,index)=>{
-            return(
-                <ResCard name={res.info.name} key={res.info.id} imgSrc={res.info.cloudinaryImageId}/>
-            )
-        })
-      }
+     {
+      resData.map((res)=>{
+        return(
+          <ResCard name={res.info.name}   ratings={res.info.avgRating} cuisines={res.info.cuisines}  address={res.info.locality} imgSrc={res.info.cloudinaryImageId} key={res.info.id} />
+        )
+      })
+     }
+    </div>
     </div>
   )
 }
