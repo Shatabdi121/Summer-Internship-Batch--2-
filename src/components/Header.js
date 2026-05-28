@@ -1,5 +1,7 @@
 import React from "react";
 const NavBar =() =>{
+let a=10
+
   return(
     <ul className="nav-bar">
         <li className="nav-items">Home</li>

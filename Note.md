@@ -19,3 +19,6 @@
 
 ###Component:  1. Class Based Component
                             2. Function Based Component
+
+
+###PROPS:- properties
