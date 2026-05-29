@@ -27,9 +27,19 @@ const Body = () => {
      setResData(a)
     }
 
+function searchText(e){
+
+  const a= copyOfResData.filter((res)=>{
+      const name=res.info.name.toLowerCase()
+        return name.includes(e.target.value.toLowerCase())
+     })
+     setResData(a)
+}
+
   return (
     <div >
-    <button onClick={topRes}>Top Rated </button>
+    <button onClick={topRes} className='top-rated'>Top Rated </button>
+    <input  type='text' onChange={searchText}/>
     <div className='container'>
      {
       resData.map((res)=>{
