@@ -276,3 +276,45 @@
     text-align: center;
   }
 }
+.search-text{
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f8fafc;
+  color: #334155;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.search-text:hover {
+  border-color: #cbd5e1;
+}
+
+.search-text:focus {
+  border-color: #ff5200; /* Swiggy Orange flavor */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.15);
+}
+
+/* Placeholder text style */
+.search-text::placeholder {
+  color: #94a3b8;
+}
+.shimmer{
+  width: 100%; /* Changed from fixed 250px to 100% to fill grid tracks cleanly */
+  background-color: #f79c3a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  height: 250px;
+}
+.shimmer-container{
+  display: flex;
+  gap: 20px;
+}

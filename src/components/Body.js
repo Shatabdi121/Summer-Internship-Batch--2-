@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ResCard from './ResCard'
 import { SWIGGY_RES_API } from '../utils/constants'
+import Shimmer from './Shimmer';
+import { Link } from 'react-router';
 
 const Body = () => {
     // const copyOfResData=resData
-    const [resData,setResData]=useState([]);
+    const [resData,setResData]=useState(null);
     const copyOfResData=resData
 
     async function fetchRestaurent(){
@@ -35,16 +37,21 @@ function searchText(e){
      })
      setResData(a)
 }
+if(resData==null){
+  return (
+    <Shimmer/>
+  )
+}
 
   return (
     <div >
     <button onClick={topRes} className='top-rated'>Top Rated </button>
-    <input  type='text' onChange={searchText}/>
+    <input  type='text' onChange={searchText} className='search-text'/>
     <div className='container'>
      {
       resData.map((res)=>{
         return(
-          <ResCard name={res.info.name}   ratings={res.info.avgRating} cuisines={res.info.cuisines}  address={res.info.locality} imgSrc={res.info.cloudinaryImageId} key={res.info.id} />
+          <Link to={"/resMenu/"+res.info.id} key={res.info.id}><ResCard name={res.info.name}   ratings={res.info.avgRating} cuisines={res.info.cuisines}  address={res.info.locality} imgSrc={res.info.cloudinaryImageId} resId={res.info.id}  /></Link>
         )
       })
      }
