@@ -10,7 +10,7 @@ let a=10
         <li className="nav-items"><Link to="/">Home </Link></li>
         <li className="nav-items">Search</li>
         <li className="nav-items"><Link to="/offers">Offers</Link></li>
-        <li className="nav-items">Help</li>
+        <li className="nav-items"><Link to="/help">Help </Link></li>
         <li className="nav-items">Sign in</li>
          <li className="nav-items">Cart</li>
       </ul>

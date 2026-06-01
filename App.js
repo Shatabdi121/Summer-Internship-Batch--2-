@@ -9,13 +9,14 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router"
 import Offers from "./src/components/Offers"
 import ErrorPage from "./src/components/ErrorPage"
 import ResMenu from "./src/components/ResMenu"
+import Help from "./src/components/Help"
 
 
 const Main = () =>{
     return(
         <div className="main">
         <Header/>
-        <Outlet />
+        <Outlet /> 
         <Footer/>
         </div>
     )
@@ -40,10 +41,15 @@ const appRouter=createBrowserRouter([
             {
                 path:"/resMenu/:resId",
                 element:<ResMenu/>
+            },
+              {
+                path:"/help",
+                element:<Help/>
             }
         ]
     },
 ])
+
 
 
 

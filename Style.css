@@ -424,3 +424,11 @@
   color: #fc8019; /* Changes text color to orange on hover */
   padding-left: 18px; /* Smooth indention shift */
 }
+.menu-item-row{
+  display: flex;
+  justify-content: space-between;
+}
+.menu-img{
+  height: 150px;
+  width: 250px;
+}
