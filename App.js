@@ -10,6 +10,18 @@ import Offers from "./src/components/Offers"
 import ErrorPage from "./src/components/ErrorPage"
 import ResMenu from "./src/components/ResMenu"
 import Help from "./src/components/Help"
+import { lazy } from "react"
+import { Suspense } from "react"
+// import Grocery from "./src/components/Grocery"
+
+const Grocery=lazy(()=>import ("./src/components/Grocery"))
+
+//Lazy Loading
+//Dynamic Loading
+//On demand Loading
+//Code splitting
+//Chunking
+
 
 
 const Main = () =>{
@@ -45,6 +57,10 @@ const appRouter=createBrowserRouter([
               {
                 path:"/help",
                 element:<Help/>
+            },
+              {
+                path:"/grocery",
+                element:<Suspense fallback={<h1>Wait for some time</h1>}><Grocery/></Suspense>
             }
         ]
     },
