@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 
 const ResMenu = () => {
   const [resMenuDataFromAPI, setResMenuDataFromAPI] = useState([]);
-  const [resData, setResData] = useState([]);
+  const [resData, setResData] = useState(45);
 
   let x = useParams();
   console.log(x.resId);
