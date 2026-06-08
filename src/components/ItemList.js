@@ -7,7 +7,7 @@ const ItemList = ({ items }) => {
   return (
     <div className="max-w-3xl mx-auto px-4 divide-y divide-gray-200">
       {items.map((item) => {
-        const { id, name, description, price, defaultPrice } = item.card.info;
+        const { id, name, description, price, defaultPrice, imageId } = item.card.info;
         // Swiggy/Zomato APIs usually provide prices in paise, falling back to defaultPrice
         const displayPrice = (price || defaultPrice) / 100;
 
@@ -30,6 +30,11 @@ const ItemList = ({ items }) => {
 
             {/* Right Section: Price & Actions */}
             <div className="flex items-center justify-between sm:justify-end sm:gap-6 min-w-[80px]">
+            <img
+                src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" + imageId }
+                alt={name}
+                className="w-16 h-16 rounded-md object-cover"
+              />
               <span className="text-base font-bold text-gray-900">
                 ₹{displayPrice}
               </span>

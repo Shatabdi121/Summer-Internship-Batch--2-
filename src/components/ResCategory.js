@@ -3,7 +3,8 @@ import ItemList from './ItemList';
 const ResCategory = ({ data }) => {
 
     const [isOpen, setIsOpen] = useState(false);
-
+  console.log(data);
+  
     const handleClick=()=>{
         console.log("Print");
         setIsOpen(!isOpen);
