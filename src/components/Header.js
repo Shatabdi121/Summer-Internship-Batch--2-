@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router";
 import { useOnlineStatus } from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const status = useOnlineStatus();
+
+  const cart=useSelector((store)=>store.cart.items)
+  console.log(cart);
+  
 
   return (
     <ul className="flex flex-wrap items-center justify-center gap-4 text-gray-700 font-medium md:gap-6">
@@ -17,7 +22,7 @@ const NavBar = () => {
         <Link to="/offers">Offers</Link>
       </li>
       <li className="hover:text-blue-600 transition-colors duration-200">
-        <Link to="/help">Help</Link>
+        <Link to="/cart">Cart ({cart.length})</Link>
       </li>
       <li className="hover:text-blue-600 transition-colors duration-200">
         <Link to="/grocery">Grocery</Link>

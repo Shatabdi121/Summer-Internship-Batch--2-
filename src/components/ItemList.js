@@ -1,8 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { addItems } from '../utils/cartSlice';
 
 const ItemList = ({ items }) => {
   // Safe check to handle empty or undefined items array
+
+const dispatch=useDispatch();
+
   if (!items || items.length === 0) return null;
+  function handleAddToCart(item){
+    console.log("Add to cart", item);
+  dispatch(addItems(item))
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 divide-y divide-gray-200">
@@ -38,7 +47,7 @@ const ItemList = ({ items }) => {
               <span className="text-base font-bold text-gray-900">
                 ₹{displayPrice}
               </span>
-              <button className="px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-colors duration-200">
+              <button className="px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-colors duration-200" onClick={()=>handleAddToCart(item)}>
                 Add to Cart
               </button>
             </div>

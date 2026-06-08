@@ -13,6 +13,9 @@ import Help from "./src/components/Help"
 import { lazy } from "react"
 import { Suspense } from "react"
 // import Grocery from "./src/components/Grocery"
+import { Provider } from "react-redux"
+import appStore from "./src/utils/appStore"
+import Cart from "./src/components/Cart"
 
 const Grocery=lazy(()=>import ("./src/components/Grocery"))
 
@@ -26,11 +29,13 @@ const Grocery=lazy(()=>import ("./src/components/Grocery"))
 
 const Main = () =>{
     return(
+        <Provider store={appStore}>
         <div className="main">
         <Header/>
         <Outlet /> 
         <Footer/>
         </div>
+        </Provider>
     )
 }
 
@@ -61,6 +66,10 @@ const appRouter=createBrowserRouter([
               {
                 path:"/grocery",
                 element:<Suspense fallback={<h1>Wait for some time</h1>}><Grocery/></Suspense>
+            },
+             {
+                path:"/cart",
+                element:<Cart/>
             }
         ]
     },
